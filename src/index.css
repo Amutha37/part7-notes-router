@@ -1,0 +1,45 @@
+h1 {
+  color: green;
+  font-style: italic;
+}
+
+.note {
+  color: rgb(18, 81, 208);
+  padding-top: 3px;
+  font-size: 15px;
+}
+.error,
+.success {
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+/* login form   */
+
+.login_form_container {
+  width: 30rem;
+  height: 20rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  background-color: antiquewhite;
+}
+
+.login_form {
+  margin-top: 5rem;
+}
+input {
+  margin-top: 2rem;
+  padding: 3px;
+}
+button {
+  margin-top: 1rem;
+}
