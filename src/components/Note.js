@@ -3,7 +3,7 @@ const Note = ({ note }) => {
     <div>
       <h2>{note.content}</h2>
       <div>{note.user}</div>
-      <div>
+      <div id='anec'>
         <strong>{note.important ? 'important' : ''}</strong>
       </div>
     </div>
