@@ -26,3 +26,5 @@ Custom hooks
 </summary>
 
 </details>
+
+- the nmaterial ui color has tobe changed. Nav bar selection is not visible.

@@ -1,5 +1,5 @@
 const Home = () => (
-  <div>
+  <div className='container'>
     <h2>TKTL notes app</h2>
     <p>
       $

@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Notes from './components/Notes'
+import Notes from './components/NotesUi'
 import Note from './components/Note'
 import Home from './components/Home'
 import Users from './components/Users'
-import Login from './components/Login'
+import Login from './components/LoginUi'
 import React from 'react'
 import {
   // BrowserRouter as Router,
@@ -15,7 +15,15 @@ import {
   // useNavigate,
   useMatch,
 } from 'react-router-dom'
-import { Alert, Nav, Navbar } from 'react-bootstrap'
+// import { Alert, Nav, Navbar } from 'react-bootstrap'
+import {
+  Container,
+  Alert,
+  AppBar,
+  Toolbar,
+  // IconButton,
+  Button,
+} from '@mui/material'
 
 // const Notes = ({ notes }) => (
 //   <div>
@@ -130,44 +138,49 @@ const App = () => {
     padding: 5,
   }
 
+  // material UI format
   return (
-    <div className='container'>
-      {message && <Alert variant='success'>{message}</Alert>}
+    <Container>
+      <div>{message && <Alert variant='success'>{message}</Alert>}</div>
+      <AppBar position='static'>
+        <Toolbar>
+          <Button color='inherit' component={Link} to='/'>
+            home
+          </Button>
+          <Button color='inherit' component={Link} to='/notes'>
+            notes
+          </Button>
+          <Button color='inherit' component={Link} to='/users'>
+            users
+          </Button>
+          {user ? (
+            <em>{user} logged in</em>
+          ) : (
+            <Button color='inherit' component={Link} to='/login'>
+              login
+            </Button>
+          )}
+        </Toolbar>
+      </AppBar>
 
-      <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
-        <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link href='#' as='span'>
-              <Link style={padding} to='/'>
-                home
-              </Link>
-            </Nav.Link>
-
-            <Nav.Link href='#' as='span'>
-              <Link style={padding} to='/notes'>
-                notes
-              </Link>
-            </Nav.Link>
-
-            <Nav.Link href='#' as='span'>
-              <Link style={padding} to='/users'>
-                users
-              </Link>
-            </Nav.Link>
-
-            <Nav.Link href='#' as='span'>
-              {user ? (
-                <em>{user} logged in</em>
-              ) : (
-                <Link style={padding} to='/login'>
-                  login
-                </Link>
-              )}
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <div>
+        <Link style={padding} to='/'>
+          home
+        </Link>
+        <Link style={padding} to='/notes'>
+          notes
+        </Link>
+        <Link style={padding} to='/users'>
+          users
+        </Link>
+        {user ? (
+          <em>{user} logged in</em>
+        ) : (
+          <Link style={padding} to='/login'>
+            login
+          </Link>
+        )}
+      </div>
 
       <Routes>
         <Route path='/notes/:id' element={<Note note={note} />} />
@@ -183,7 +196,7 @@ const App = () => {
         <br />
         <em>Note app, Department of Computer Science 2022</em>
       </div>
-    </div>
+    </Container>
   )
 }
 export default App
