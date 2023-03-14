@@ -28,3 +28,9 @@ Custom hooks
 </details>
 
 - the nmaterial ui color has tobe changed. Nav bar selection is not visible.
+
+  `App` is using bootstrap
+  `App2` is using material Ui
+  `App1` is initial file
+
+`NoteUi` and `LoginUi` with style library.
