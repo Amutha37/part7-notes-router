@@ -27,7 +27,22 @@ Custom hooks
 
 </details>
 
-- the nmaterial ui color has tobe changed. Nav bar selection is not visible.
+## How to start
+
+ <details>
+ <summary>
+
+No need : `npm run server`
+
+```
+npm start
+```
+
+</summary>
+
+</details>
+
+- the material ui color has tobe changed. Nav bar selection is not visible.
 
   `App` is using bootstrap
   `App2` is using material Ui
